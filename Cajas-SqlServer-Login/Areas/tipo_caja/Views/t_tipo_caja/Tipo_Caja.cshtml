@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Cajas_SqlServer_Login.Areas.tipo_caja.Models.t_tipo_caja>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Tipos de Cajas</h1>
+
+<p>
+    <a asp-action="Create">Crear Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.idtipocaja">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.idtipocaja">Detalles</a> |
+                    <a asp-action="Delete" asp-route-id="@item.idtipocaja">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Cajas_SqlServer_Login.Areas.caja.Models.t_caja>
+
+@{
+    ViewData["Title"] = "Cajas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Cajas</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_registro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_cierre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.usuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.anio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rtipocaja)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_registro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_cierre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.usuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.anio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rtipocaja.nombre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idtcaja">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.idtcaja">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.idtcaja">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

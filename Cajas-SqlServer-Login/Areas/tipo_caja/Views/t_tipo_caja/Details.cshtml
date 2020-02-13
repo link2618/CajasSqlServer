@@ -1,0 +1,25 @@
+﻿@model Cajas_SqlServer_Login.Areas.tipo_caja.Models.t_tipo_caja
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>t_tipo_caja</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.idtipocaja">Edit</a> |
+    <a asp-action="Tipo_Caja">Back to List</a>
+</div>

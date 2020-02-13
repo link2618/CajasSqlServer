@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Cajas_SqlServer_Login.Areas.carpeta.Models.t_carpeta>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Carpetas</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_registro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_cierre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rcaja)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_registro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_cierre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rcaja.idtcaja)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idcarpeta">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.idcarpeta">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.idcarpeta">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
